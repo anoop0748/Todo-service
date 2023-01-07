@@ -44,7 +44,7 @@ function TodoUser (){
      action:"Start"
    }
  
-  data.push(inp_data)
+//   data.push(inp_data)
    let res = await axios.post(Url,inp_data,{
 
      headers:{
@@ -52,6 +52,9 @@ function TodoUser (){
          'content-type':'application/json;charset= UTF-8'
      }
    });
+   if(res.status === 200){
+    getData()
+   }
   
  }  
 
@@ -76,23 +79,25 @@ function TodoUser (){
                          <div id="table_cont">
                              <table>
                                 <thead>
-                                    <td>Activity</td>
-                                    <td>Status</td>
-                                     <td>Time Taken</td>
-                                     <td>Action</td>
+                                    <tr>
+                                    <th>Activity</th>
+                                    <th>Status</th>
+                                     <th>Time Taken</th>
+                                     <th>Action</th>
+                                    </tr>
                                 </thead>
-                                
+                                <tbody>
                                     {data?.map((val,i)=>{
                                          return (
-                                             <tbody key={i}>
+                                             <tr key={i}>
                                                  <td>{val.activity}</td>
                                                  <td>{val.status}</td>
                                                  <td>{val.time_taken}</td>
                                                  <td>{val.action}</td>
-                                             </tbody>
+                                             </tr>
                                          )
                                      })}
-                                 
+                                </tbody>
                              </table>
                          </div>
                      </div>
