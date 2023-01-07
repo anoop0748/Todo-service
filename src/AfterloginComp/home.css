@@ -8,8 +8,10 @@
     display: flex;
     align-items: center;
     justify-content: flex-end;
-    padding-right: 10%;
     border: 2px solid rgb(138, 235, 12);
+}
+.td_header h3{
+    margin-right: 20px;
 }
 .td_body{
 
@@ -28,4 +30,29 @@
 .td_right_section{
     display: flex;
     flex-direction: column;
+    align-items: center;
+    width: 70%;
+    margin: 5%
+}
+#table_cont{
+    margin-top: 2%;
+    width: 100%;
+    
+}
+#table_cont table{
+    display: table;
+        border-collapse:collapse;
+        box-sizing: border-box;
+        text-indent: initial;
+        border-spacing: 0px;
+        border: none;
+        width: 90%;
+        margin: 3% 5% 2% 5%;
+        border: 1px solid gray;
+    
+}
+#table_cont td{
+    margin: 0% 5%;
+    border: 1px solid gray;
+    
 }
