@@ -8,7 +8,7 @@ function TodoUser (){
      const Url = "https:todo-backend-service.onrender.com/successfulLogin"
      const navigate = useNavigate()
      const [user_n,set_user_n] = useState("")
-     let token = JSON.parse(window.localStorage.getItem('token'))
+     let token = window.localStorage.getItem('token')
      console.log(token)
       const [todo,set_todo] = useState("")
       let [data ,set_data] = useState([])
