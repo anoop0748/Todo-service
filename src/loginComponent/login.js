@@ -14,7 +14,7 @@ function LoginComp (){
         }
         let res = await axios.post(Url,data);
         if(res.status === 200){
-            window.localStorage.setItem("token",JSON.stringify(res.data.token));
+            window.localStorage.setItem("token",res.data.token);
             navigate('/SuccessLogin')
         }
         console.log(res.data.token)
