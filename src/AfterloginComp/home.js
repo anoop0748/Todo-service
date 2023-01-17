@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { React, useEffect, useState } from "react";
 import './home.css'
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
@@ -12,8 +12,8 @@ function TodoUser (){
      console.log(token)
       const [todo,set_todo] = useState("")
       let [data ,set_data] = useState([])
-     function getData(){
-         fetch(Url,{
+     async function getData(){
+         await fetch(Url,{
              method:"get",
              headers:{
                  Authorization: token   
@@ -69,7 +69,7 @@ function TodoUser (){
                             <h5> History</h5> 
                             </div> 
                          <div></div> 
-                        <div onClick={logout}>LogOut</div> 
+                        <button onClick={logout}>LogOut</button> 
                     </div>
                     <div className="td_right_section">
                         <div >
