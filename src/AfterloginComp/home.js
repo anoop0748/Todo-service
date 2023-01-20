@@ -13,17 +13,15 @@ function TodoUser (){
       const [todo,set_todo] = useState("")
       let [data ,set_data] = useState([])
      async function getData(){
-         await fetch(Url,{
-             method:"get",
-             headers:{
-                 Authorization: token   
-             }
-         }).then((res)=>res.json())
-         .then((data)=>{
-            console.log(data.dataInDB[0].user_name)
-            set_user_n(data.dataInDB[0].user_name)
-            set_data(data.dataInDB[0].todo_list)
-         })
+         let res_backend = await axios.get(Url,{
+            headers:{
+                Authorization: token   
+            }
+        })
+        if(res_backend.status === 200){
+            set_user_n(res_backend.data.dataInDB[0].user_name);
+            set_data(res_backend.data.dataInDB[0].todo_list);
+        }else{alert("Please Login Again ...")}
      } 
        
      useEffect(()=>{
