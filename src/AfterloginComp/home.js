@@ -15,7 +15,8 @@ function TodoUser (){
      async function getData(){
          let res_backend = await axios.get(Url,{
             headers:{
-                Authorization: token   
+                Authorization: token,
+                 'Content-Type': 'application/json'
             }
         })
         if(res_backend.status === 200){
